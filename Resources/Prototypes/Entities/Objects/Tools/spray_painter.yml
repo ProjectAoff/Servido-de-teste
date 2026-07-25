@@ -73,8 +73,8 @@
     qualities:
     - Painting
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 30 # Gaby
+    lastCharges: 30 # Gaby
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -102,6 +102,7 @@
   description: A cartridge of highly compressed paint, commonly used in spray painters.
   components:
   - type: SprayPainterAmmo
+    charges: 30 # GabyStation
   - type: Sprite
     sprite: Objects/Tools/spray_painter.rsi
     state: ammo

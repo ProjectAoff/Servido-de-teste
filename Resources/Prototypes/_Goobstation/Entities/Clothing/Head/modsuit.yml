@@ -49,6 +49,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
 
   - type: Tag
     tags:
@@ -84,6 +86,21 @@
       state: helmetbloodicon
   - type: StainBlocker
     slots: [MASK]
+  # GabyStation begin
+  - type: UpgradeableWeapon # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
+  - type: ContainerContainer
+    containers:
+      head_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      head_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitHeadUpgrade
+  # GabyStation end
 
 - type: entity
   abstract: true
@@ -135,6 +152,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -222,6 +241,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/security.rsi
     layers:
@@ -246,6 +267,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -332,6 +355,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/headofsecurity.rsi
     layers:
@@ -355,6 +380,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -444,6 +471,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -529,6 +558,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -614,6 +645,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-helmet
     sealDownPopup: sealable-clothing-seal-down-helmet
@@ -628,6 +661,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -727,6 +762,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -824,6 +861,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3

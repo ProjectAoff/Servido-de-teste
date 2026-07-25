@@ -265,6 +265,7 @@
     defaultChannel: Binary
     channels:
     - Binary
+  - type: IntellicardableMind # Goobstation - intellicard on more AIs
   - type: DoAfter
   - type: Electrified
     enabled: false
@@ -403,6 +404,7 @@
   components:
   - type: VendingMachine
     pack: AmmoVendInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -429,6 +431,7 @@
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -449,7 +452,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Bar"]]
+    access: [["Service"]]
   - type: GuideHelp
     guides:
     - Bartender
@@ -498,6 +501,7 @@
   components:
   - type: VendingMachine
     pack: PTechInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1097,6 +1101,7 @@
   components:
   - type: VendingMachine
     pack: MagiVendInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1300,6 +1305,7 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
+    paidItems: false # GabyStation -> Economy
   - type: DatasetVocalizer
     dataset: SecTechAds
   - type: SpeakOnUIClosed
@@ -1344,6 +1350,7 @@
   - type: VendingMachine
     pack: MegaSeedServitorInventory
     offState: off
+    paidItems: false # GabyStation -> Economy
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
@@ -1428,6 +1435,7 @@
   components:
   - type: VendingMachine
     pack: SustenanceInventory
+    paidItems: false # GabyStation -> Economy
     dispenseOnHitChance: 0.25
     dispenseOnHitThreshold: 2
     offState: off
@@ -1700,7 +1708,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Research"]]
+    access: [["Robotics"]] # Dumont edit
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -1890,7 +1898,7 @@
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
-    access: [["Salvage"]]
+    access: [["Mining"]] # Dumont edit
   - type: GuideHelp
     guides:
     - Salvage
@@ -2020,7 +2028,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#d82929"
+    color: "#1142b6"
   - type: AccessReader
     access: [["Security"]]
 
@@ -2196,7 +2204,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Service"]]
+    access: [["Library"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2439,7 +2447,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Research"]]
+    access: [["Robotics"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2467,7 +2475,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Medical"]]
+    access: [["Genetics"]] # Dumont Edit
 
 - type: entity
   parent: VendingMachine
@@ -2495,7 +2503,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Medical"]]
+    access: [["Virology"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2508,6 +2516,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/centdrobe.rsi
     layers:
@@ -2611,6 +2620,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEVAInventory
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     state: dispenser
@@ -2624,6 +2634,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEngineeringInventory
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     layers:
@@ -2642,7 +2653,8 @@
     brokenState: broken
     normalState: normal
     denyState: deny
-    ejectDelay: 2
+    # ejectDelay: 2 Goobstation - No reason for the eject delay to be 2 seconds
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chemvend.rsi
     layers:

@@ -95,9 +95,12 @@
             SecurityCadet: [ 6, 6 ]
             Lawyer: [ 3, 3 ]
             Brigmedic: [ 1, 1 ]
+            PermaPrisoner: [ 2, 2 ] # Gaby
+            PrisonGuard: [ 1, 1 ] # Gaby
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 4, 4 ]
             CargoTechnician: [ 5, 5 ]
             #civilian

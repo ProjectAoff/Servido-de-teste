@@ -202,17 +202,26 @@ namespace Content.Server.Database
 
         // Gabystation
         public DbSet<GabyModel.GabyStoreOwnedItems> GabyStoreOwnedItems { get; set; } = default!;
+        public DbSet<DBJobAlternateTitle> DBJobAlternateTitle { get; set; } = null!;
 
         // Goobstation Polls
         public DbSet<Poll> Polls { get; set; } = default!;
         public DbSet<PollOption> PollOptions { get; set; } = default!;
         public DbSet<PollVote> PollVotes { get; set; } = default!;
+        public DbSet<PollSeen> PollSeen { get; set; } = default!;
+        public DbSet<BookPrinterEntry> BookPrinterEntry { get; set; } = null!; // ADT-BookPrinter
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
+
+            // ADT-BookPrinter-Start
+            modelBuilder.Entity<BookPrinterEntry>()
+                .HasIndex(p => p.Id)
+                .IsUnique();
+            // ADT-BookPrinter-End
 
             modelBuilder.Entity<Profile>()
                 .HasIndex(p => new { p.Slot, PrefsId = p.PreferenceId })
@@ -223,6 +232,12 @@ namespace Content.Server.Database
                 .HasOne(p => p.Profile)
                 .WithOne(p => p.CDProfile)
                 .HasForeignKey<CDModel.CDProfile>(p => p.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<CDModel.CharacterAllergy>()
+                .HasOne(a => a.CDProfile)
+                .WithMany(p => p.CharacterAllergies)
+                .HasForeignKey(a => a.CDProfileId)
                 .IsRequired();
 
             modelBuilder.Entity<CDModel.CharacterRecordEntry>()
@@ -637,6 +652,33 @@ namespace Content.Server.Database
             modelBuilder.Entity<PollVote>()
                 .HasIndex(v => new { v.PollId, v.PlayerUserId, v.PollOptionId })
                 .IsUnique();
+
+            modelBuilder.Entity<PollSeen>()
+                .HasOne(s => s.Poll)
+                .WithMany()
+                .HasForeignKey(s => s.PollId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollSeen>()
+                .HasOne(s => s.Player)
+                .WithMany()
+                .HasForeignKey(s => s.PlayerUserId)
+                .HasPrincipalKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PollSeen>()
+                .HasIndex(s => new { s.PollId, s.PlayerUserId })
+                .IsUnique();
+
+            modelBuilder.Entity<DBJobAlternateTitle>()
+                .HasOne(e => e.Profile)
+                .WithMany(e => e.AltTitles)
+                .HasForeignKey(e => e.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<DBJobAlternateTitle>()
+                .HasIndex(p => new { p.ProfileId, p.RoleName, p.AlternateTitle })
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -689,7 +731,7 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
 
-        public List<DBJobAlternateTitle> AltTitles = new();
+        public List<DBJobAlternateTitle> AltTitles { get; } = new();
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
@@ -955,6 +997,27 @@ namespace Content.Server.Database
         public int AdminRankId { get; set; }
         public AdminRank Rank { get; set; } = default!;
     }
+
+    // ADT-BookPrinter-Start
+    public class BookPrinterEntry
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string Name { get; set; } = default!;
+        public string Description { get; set; } = default!;
+        public string Content { get; set; } = default!;
+        public List<StampedData> StampedBy { get; set; } = default!;
+        public string StampState { get; set; } = "paper_stamp-void";
+    }
+
+    public class StampedData
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string Name { get; set; } = default!;
+        public string Color { get; set; } = default!;
+    }
+    // ADT-BookPrinter-End
 
     public class Round
     {

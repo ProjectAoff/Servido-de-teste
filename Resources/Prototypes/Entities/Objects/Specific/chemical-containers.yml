@@ -144,7 +144,7 @@
       solution: beaker
     - type: Appearance
     - type: SolutionContainerVisuals
-      maxFillLevels: 6
+      maxFillLevels: 8
       fillBaseName: jug
       inHandsMaxFillLevels: 5
       inHandsFillBaseName: -fill-
@@ -182,8 +182,9 @@
     - type: Tag
       tags:
       - ChemDispensable
+      - Jug # Dumont
     - type: DnaSubstanceTrace
-    
+
 - type: entity
   name: tanque de reagente
   parent: BaseItem
@@ -230,7 +231,7 @@
   - type: MultiHandedItem
   - type: StaticPrice
     price: 400
-    
+
     #feito por skysnowflok/supernova com ajuda do Bruno e sprite por skysnowflok/supernova
     #Gabystation
 
@@ -598,17 +599,4 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 200
-- type: entity
-  parent: Jug
-  suffix: holy water
-  id: JugHolyWater
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Label
-    currentLabel: reagent-name-holywater
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Holywater
-          Quantity: 200
+

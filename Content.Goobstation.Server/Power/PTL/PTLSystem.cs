@@ -29,7 +29,6 @@ using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -162,7 +161,7 @@ public sealed partial class PTLSystem : EntitySystem
 
         var usedMJ = energyUsed / megajoule;
         // some random formula i found in bounty thread i popped it into desmos i think it looks good
-        var spesos = (int) (usedMJ * 500 / (Math.Log(usedMJ * 5) + 1));
+        var spesos = (int) (usedMJ * 300 / (Math.Log(usedMJ * 5) + 1));
 
         if (!double.IsFinite(spesos) || spesos < 0)
             return;

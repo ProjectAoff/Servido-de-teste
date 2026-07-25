@@ -78,9 +78,9 @@
   suffix: Alt
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+    sprite: _Gabystation/Clothing/Head/Helmets/security.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
+    sprite: _Gabystation/Clothing/Head/Helmets/security.rsi # Gaby
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -152,7 +152,7 @@
 
 # Western Undetermined Set
 - type: entity
-  parent: [ClothingHeadHatCowboyBrown, BaseMajorContraband]
+  parent: [ClothingHeadHatArmored, ClothingHeadHatCowboyBrown, BaseMajorContraband]
   id: ClothingHeadHatCowboyBrownRobust
   name: authentic brown cowboy hat
   description: "\"This station ain't big enough for the two of us.\""

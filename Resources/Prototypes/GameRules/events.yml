@@ -164,7 +164,7 @@
     - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
+#    - id: MimicVendorRule dumont edit doesn't do shit, useless event
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -181,7 +181,7 @@
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds
-    - id: SantaClausSpawn # Goobstation, remove after new year
+    # - id: SantaClausSpawn # Goobstation, remove after new year
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -194,10 +194,13 @@
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
     - id: HereticMidround # Gabystation
-    - id: CosmicCultMidround # Gabystation
-    - id: BloodCultMidround # Gabystation
+#    - id: CosmicCultMidround # Dumont edit cosmic cult is way too incompatible with other antags
+#    - id: BloodCultMidround # way too incompatible with other antags
+#    - id: RevolutionaryMidround # way too incompatible with other antags
     - id: ZombieOutbreak
+    - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
+    - id: WraithMidround # Unchuddified version | no evolution | no absorbing corpses
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
@@ -205,16 +208,17 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    - id: SlasherSpawn # Goobstation - The Slasher
+    - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
     - id: GreyTideAntagMidround # Goobstation - New Midrounds
     - id: SingulothKnightsMidround # Goobstation - New Midrounds
-    - id: DarkLordMidround # Goobstation - New Midrounds
+    #- id: DarkLordMidround # Goobstation - New Midrounds
     - id: MimeAssassinMidround # Goobstation - New Midrounds
     - id: DarkPriestMidround # Goobstation - New Midrounds
     - id: VoxRaidersMidround # Goobstation - New Midrounds
-    - id: TunnelClownMidround # Goobstation
+    #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
     #TODO when midrounds are "reviewed" by the chudmins add them back
-    #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -253,7 +257,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Gabystation/Announcements/anomaly_spawn_saae.ogg
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -276,7 +280,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Gabystation/Announcements/bluespace_saae.ogg
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -306,6 +310,8 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/breaker_saae.ogg
     weight: 7
     duration: 1
     minimumPlayers: 15
@@ -323,6 +329,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/burocratico_saae.ogg
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -340,6 +348,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/clerigal_saae.ogg
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -472,6 +482,8 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNinja
       mindRoles:
       - MindRoleNinja
 
@@ -599,8 +611,10 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
+    endAudio:
+      path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
     weight: 8
     chaos:
       Atmos: 100
@@ -616,6 +630,9 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
+    startAnnouncement: station-event-kudzu-growth-start-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/kudzu_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 7
@@ -627,7 +644,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 100 #dumont edit
   - type: KudzuGrowthRule
 
 - type: entity
@@ -635,19 +652,17 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 5
+    weight: 3
     startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+      path: /Audio/_Gabystation/Announcements/power_off_saae.ogg
+    endAnnouncement: station-event-power-grid-check-end-announcement
     duration: 60
     maxDuration: 120
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 120 #Dumont edit annoying
   - type: PowerGridCheckRule
 
 - type: entity
@@ -655,11 +670,13 @@
   id: SolarFlare
   components:
   - type: StationEvent
-    weight: 8
+    weight: 6
     startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
+    endAnnouncement: station-event-solar-flare-end-announcement
+    endAudio:
+      path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -667,7 +684,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: 100 #Dumont edit annoying
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -691,7 +708,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/scrubbers_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -701,7 +718,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 70
+    chaosScore: 240 #Dumont edit distracting and fucks up combat
   - type: VentClogRule
 
 - type: entity
@@ -711,7 +728,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/aliens.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -722,7 +739,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 120 # dumont edit doesn't do shit
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -735,7 +752,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -746,7 +763,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 180 #dumont edit sometimes kills people
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -761,7 +778,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/aliens.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -772,7 +789,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 120 # dumont edit weak
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobGiantSpiderAngry
@@ -784,7 +801,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 3 # Goobstation - was 1.5
@@ -795,7 +812,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 150 # Dumont edit they're weak as hell
   - type: VentCrittersRule
     playerRatio: 20 # DeltaV: Clown spiders are very robust
     table: # DeltaV: EntityTable instead of spawn entries
@@ -806,6 +823,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAnnouncement: station-event-zombie-outbreak-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/zombie_saae.ogg
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
@@ -849,23 +869,28 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 6.0 # Goobstation - was 5.5
-    minimumPlayers: 20 # Goobstation - was 20
-    duration: 1
+    weight: 1 # Dumontstation - was 6.0 because of *us* and we never noticed it and we always complained about it.
+    minimumPlayers: 30 # Dumontstation was 20
+    duration: null
     maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
     chaos: # Goobstation
-      Hostile: 200
-      Medical: 200
-      Death: 200
+      Hostile: 250
+      Medical: 250
+      Death: 250
+      Combat: 400
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 700
+    chaosScore: 800 # Dumont edit they end the round when they show up and can declare war
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
+    gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml # GabyStation
   - type: NukeopsRule
     roundEndBehavior: Nothing
+    warDeclarationMinOps: 1 # <--- GabyStation - Adicionado aqui para permitir guerra com 1 jogador
+    warNukieArriveDelay: 300 # <--- GabyStation - Adicionado para manter o Lone preso por 5 minutos.
+    warTcAmountPerNukie: 60 # GabyStation
+    warTcPerPlayer: 5  # GabyStation
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative
@@ -877,6 +902,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistLoneops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -903,7 +930,7 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     eventType: HostilesSpawn # Goobstation
@@ -952,6 +979,9 @@
   id: IonStorm
   components:
   - type: StationEvent
+    startAnnouncement: station-event-ion-storm-start-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/ionstorm_saae.ogg
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
@@ -990,7 +1020,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/greytide_saae.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

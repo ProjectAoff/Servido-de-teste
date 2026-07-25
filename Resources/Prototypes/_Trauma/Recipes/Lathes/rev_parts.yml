@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  abstract: true
+  id: BaseRevComponent
+  categories: [ Parts ]
+  completetime: 15
+  materials:
+    Steel: 10
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevGear
+  result: RevGear
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevNut
+  result: RevNut
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevBolt
+  result: RevBolt
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevBallBearings
+  result: RevBallBearings
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevArmorPlate
+  result: RevArmorPlate
+  materials:
+    Steel: 500

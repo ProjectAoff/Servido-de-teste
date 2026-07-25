@@ -12,6 +12,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Grab;
 using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Damage.Prototypes;
@@ -20,10 +21,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Goobstation.Shared.MartialArts;
 
 [Prototype("martialArt")]
-public sealed class MartialArtPrototype : IPrototype
+public sealed partial class MartialArtPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private init; } = default!;
+    public string ID { get; private set; } = default!;
 
     [DataField]
     public MartialArtsForms MartialArtsForm = MartialArtsForms.CloseQuartersCombat;

@@ -35,7 +35,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.4
+    fireRate: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -67,13 +67,10 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: ChamberMagazineAmmoProvider
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
     - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -183,3 +180,7 @@
     price: 500
   - type: GunRecoil
     refreshKnockdown: false
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni

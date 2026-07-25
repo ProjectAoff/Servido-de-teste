@@ -203,7 +203,7 @@
     key: walls
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: Walls # Trauma, was StructuralMetallic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -229,6 +229,7 @@
   - type: ExaminableDamage
     messages: WindowMessages
   # </Goobstation>
+  - type: SoundBlocker # Trauma
 
 - type: entity
   abstract: true

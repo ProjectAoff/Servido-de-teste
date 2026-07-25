@@ -30,6 +30,7 @@
   - BoxShotgunPractice
   # - MagazineBoxLightRiflePractice # Goobstation - remove light rifle
   - MagazineBoxMagnumPractice
+  - MagazineBoxWatsonPractice # Dumont
   - MagazineBoxPistolPractice
   - MagazineBoxRiflePractice
   - WeaponDisablerPractice
@@ -38,7 +39,9 @@
   - MagazineRiflePractice
   - MagazinePistolPractice
   - SpeedLoaderMagnumPractice
+  - SpeedLoaderWatsonPractice # Dumont
   - MagazinePistolSubMachineGunPractice
+  - MagazineBoxChesterRiflePractice # Dumont
   - WeaponFlareGunSecurity
 
 # Shared between secfab and emagged autolathe
@@ -49,6 +52,7 @@
   - BoxShotgunSlug
   # - MagazineBoxLightRifle # Goobstation - remove light rifle
   - MagazineBoxMagnum
+  - MagazineBoxWatson # Dumont
   - MagazineBoxPistol
   - MagazineBoxRifle
   # - MagazineLightRifle # Goobstation - remove light rifle
@@ -65,8 +69,9 @@
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
   - SpeedLoaderMagnum
+  - SpeedLoaderWatson # Dumont
   - SpeedLoaderMagnumEmpty
-  - ShrapnelPayload
+  - SpeedLoaderWatsonEmpty # Dumont
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -75,6 +80,8 @@
   - Stunbaton
   - CombatKnife
   - RiotShield
+  - RiotBulletShield
+  - RiotLaserShield
 
 ## Dynamic recipes
 
@@ -107,6 +114,8 @@
   - GrenadeEMP
   - GrenadeFlash
   - MagazineGrenadeEmpty
+  - ShrapnelPayload
+  - GrenadeStinger #Dumont
 
 # Shared between secfab and emagged protolathe
 - type: latheRecipePack
@@ -120,6 +129,8 @@
   # - MagazineBoxLightRifleUranium # Goobstation - remove light rifle
   - MagazineBoxMagnumIncendiary
   - MagazineBoxMagnumUranium
+  - MagazineBoxWatsonIncendiary # Dumont
+  - MagazineBoxWatsonUranium # Dumont
   - MagazineBoxPistolIncendiary
   - MagazineBoxPistolUranium
   - MagazineBoxRifleIncendiary
@@ -136,6 +147,8 @@
   - MagazineShotgunIncendiary
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
+  - SpeedLoaderWatsonIncendiary # Dumont
+  - SpeedLoaderWatsonUranium # Dumont
 
 - type: latheRecipePack
   id: SecurityWeapons
@@ -147,6 +160,7 @@
   - WeaponXrayCannon
   - WeaponTemperatureGun # Goobstation
   - Terminus # Goobstation
+  - WeaponLaserSvalinn
 
 - type: latheRecipePack
   id: SecurityDisablers

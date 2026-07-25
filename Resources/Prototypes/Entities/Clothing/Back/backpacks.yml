@@ -96,6 +96,9 @@
     grid:
     - 0,0,6,3
     maxItemSize: Huge
+    blacklist: # gaby change
+      tags:
+      - Jug
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -145,7 +148,7 @@
   description: It's a very robust backpack.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/security.rsi
+    sprite: _Gabystation/Clothing/Back/Backpacks/security.rsi # Gaby
 
 - type: entity
   parent: [ClothingBackpack, BaseSecurityContraband]
@@ -154,7 +157,7 @@
   description: It's a very sterile backpack.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/brigmedic.rsi
+    sprite: _Gabystation/Clothing/Back/Backpacks/brigmedic.rsi # Gaby
 
 - type: entity
   parent: ClothingBackpack
@@ -253,7 +256,7 @@
   description: A robust backpack for stealing cargo's loot.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Backpacks/cargo.rsi
+      sprite: _Goobstation/Clothing/Back/Backpacks/cargo.rsi
 
 - type: entity
   parent: ClothingBackpack

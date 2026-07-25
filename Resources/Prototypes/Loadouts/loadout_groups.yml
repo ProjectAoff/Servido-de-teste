@@ -270,6 +270,7 @@
   - MP3PlayerWhite
   - PhotoCamera
   # End Gabystation
+  - PlushieJanie # DumontStation
 
 - type: loadoutGroup
   id: Glasses
@@ -566,8 +567,8 @@
   - HeadbandBlack
   - WitchHat #Gabystation
   - ToucaDeGato #Gabystation
-  - BrownFedora #Gabystation
-  - GreyFedora #Gabystation
+  - BrownFedoraOffBrand #Gabystation
+  - GreyFedoraOffBrand #Gabystation
   - Fez #Gabystation
   - PirateHat #Gabystation
   - Sombrero #Gabystation
@@ -1206,6 +1207,7 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+  - CargoTechnicianOveralls #Goob
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
   - CargoTechMJ # goob
@@ -1449,7 +1451,9 @@
   exclusiveWith: INNERCLOTHING # Goobstation
   loadouts:
   - ResearchDirectorJumpsuit
+  - ResearchDirectorJumpsuitAlt # goob
   - ResearchDirectorJumpskirt
+  - ResearchDirectorJumpskirtAlt # goob
   - ResearchDirectorMJ # goob
   - RDSummerShirt # goob
 
@@ -1646,6 +1650,7 @@
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
   - TrooperUniform
+  - VeteranOfficerBlackJumpsuit # Goobstation
   - SecuritySummerJumpsuit # Nyanotrasen
 
 - type: loadoutGroup
@@ -1676,6 +1681,7 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
   - WinterCoatSeniorSecArmored # Goobstation
+  - VeteranOfficerArmor # Goobstation
 
 - type: loadoutGroup
   id: SecurityShoes
@@ -1685,6 +1691,7 @@
   - JackBoots
   - CombatBoots # Goobstation
   - SecurityWinterBoots
+  - CombatHighHeeledBoots # Gabystation
 
 - type: loadoutGroup
   id: SecurityPDA

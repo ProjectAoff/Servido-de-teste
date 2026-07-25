@@ -83,14 +83,13 @@
   id: Passive
 
 - type: npcFaction
-  id: PetsNT
+  id: PetsNT # GabyStation - remover Allhostile da lista de hostis   A torreta da armory é considerada allhostile, e então pets da estação atacam ela. Ja que tem quase nenhum mob que usa essa facção, eu removi da lista.
   hostile:
   - Mouse
   - Balloon # Goob Balloon Edit     Pets can join the fight against the balloons
   - SimpleHostile
   - Zombie
   - Xeno
-  - AllHostile
   - Wizard
   - Dragon
   - Blob # Goobstation - Blob
@@ -191,20 +190,29 @@
   - BloodCultist # Blood cultists
 
 - type: npcFaction
-  id: Revolutionary
+  id: Revolutionary #made more hostile for trauma
   hostile:
   - NanoTrasen
-  - Zombie
-  - SimpleHostile
   - Dragon
-  - AllHostile
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Changeling # goob edit - changelings
+  - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Shadowling # Einstein Engines - Shadowlings
-  - Wizard # Goobstation - wizard
+  - Wizard # goob edit - wizard
   - PirateFaction # goob - pirates
   - Xenoborg
   - Lavafauna # Goob - Lavaland
   - BloodCultist # Blood cultists
+  friendly: # Goobstation
+  - Revolutionary
 
 - type: npcFaction
   id: AllHostile

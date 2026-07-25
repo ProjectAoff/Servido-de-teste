@@ -36,9 +36,9 @@
   - Beaker
   - LargeBeaker
   - Syringe
+  - Dropper #Goobstation
   - PillCanister
   - HandLabeler
-  - ChemicalPayload
   - BaseChemistryEmptyVial
 
 - type: latheRecipePack
@@ -70,6 +70,8 @@
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
+  - CMBloodPack #IV!
+  - CMIV #IV!
 
 - type: latheRecipePack
   id: RollerBedsStatic
@@ -121,6 +123,7 @@
   - SyringeBluespace
   - MedkitCombat #goob - Move combat kit to research
   - VialBluespace # goob edit - bluespace vials
+  - ChemicalPayload
 
 - type: latheRecipePack
   id: MedicalBoards
@@ -129,5 +132,5 @@
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable
-  - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics
-  - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics
+  # - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only
+  # - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only
